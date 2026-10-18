@@ -124,11 +124,11 @@ The main story's twists and ending are deliberately unpublished. Do not invent t
 - **Mathematics as experience.** A triangle can be three connected points or a felt experience, as red feels unlike green. Let people feel how primes differ from even numbers or Fibonacci growth from a fractal, without lecturing them.
 - **Mixed feelings.** Awe, loneliness, tenderness and unease together. The horror is quiet: vastness, indifference, beauty that asks something in return. Ordinary life (trade, play, care, family, cooking) makes the cosmic scale land.
 
-**Tone:** quiet, cold, vast, meditative, eerie, precise, beautiful. Alien but coherent, mysterious but never random. Show rather than explain. Avoid generic neon cyberpunk, gore for its own sake, quirky whimsy, exposition dumps, and creatures that exist only as enemies.
+**Tone:** quiet, vast, meditative, eerie, precise, beautiful. Alien but coherent, mysterious but never random. Show rather than explain. Avoid generic neon cyberpunk, gore for its own sake, quirky whimsy, exposition dumps, and creatures that exist only as enemies.
 
 ### Resonance: everything from one fundamental
 
-Derive time, pitch and space from one root so that the whole work resonates. People should rarely notice it; it should simply feel synchronized.
+Derive time, pitch and space from one root so that the whole work resonates. People should rarely notice it; it should simply feel synchronized. The values below are the game's. Translate them into whatever units suit the medium (meters, centimeters, grid cells, bars), or choose another fundamental when a work has reason to: the principle is coherence from one root, not the number 12 itself. Authored poses can step at 12 per second while motion, input and display stay smooth.
 
 | Element | Value | Relation |
 | --- | --- | --- |
@@ -136,8 +136,8 @@ Derive time, pitch and space from one root so that the whole work resonates. Peo
 | Pitch reference | 48 Hz, in any octave | 12 × 4 |
 | Simulation tick | 96 Hz | 8 ticks per animation frame |
 | Tempo | 90 BPM (1.5 Hz) | 8 animation frames per beat |
-| Spatial module | 6 × 6 px tiles | 12 ÷ 2 |
-| Character height | 12 px | Two tiles |
+| Spatial module | 6 units (the game's 6 × 6 px tiles) | 12 ÷ 2 |
+| Character height | 12 units (the game's 12 px Seeker) | Two modules |
 
 **The tuning rule:** every pitch is `48 Hz × X / 2^N` for whole numbers X and N, so its denominator is a power of two: 9/8, 19/16, 13/8, 3/2 and 7/4 belong; 4/3 and 6/5 do not. Every note is then a harmonic of 48 Hz or of one of its lower octaves, folded into the octave needed. The default **Seeker palette** is 1, 9/8, 19/16, 21/16, 3/2 and 7/4 (48, 54, 57, 63, 72 and 84 Hz, repeating at every octave). This is just intonation, not twelve-tone equal temperament: use explicit frequencies or a microtuning-capable instrument. Tempos follow the same rule (`2880 × X / 2^N` BPM). Unpitched sound, noise and silence are free.
 
@@ -145,7 +145,7 @@ Lock periodic events to one shared clock so they agree in phase as well as rate.
 
 ### Patterns for interactive work
 
-These are directions, not a checklist; `docs/design/mechanics/` shows where the game stands on each.
+These are directions, not a checklist: use those that fit the work, and a racing game or a puzzle may need none of them. `docs/design/mechanics/` shows where the game stands on each.
 
 - **Become, don't just collect.** Learning from a creature means temporarily taking on its movement, attacks or senses, sharing the creature's own mechanic, not firing a reskinned projectile.
 - **The world answers.** Creatures adapt to how someone plays, legibly, opening new possibilities and leaving more than one response. Never build an omniscient counter that deletes a playstyle.
@@ -160,18 +160,23 @@ These are directions, not a checklist; `docs/design/mechanics/` shows where the 
 
 ### Visual grammar
 
-- **A cold world with one warm focal point.** The Seeker is a small muted-gold figure, ideally the only yellowish thing on screen, against cool, darker surroundings.
-- **Restrained color:** low saturation, short local ramps, dark structure, sparse luminous accents. Distant layers grow paler, as if lit from far openings.
-- **Silhouette first:** a few decisive features, then texture. Backgrounds stay simple silhouettes so attention stays on what matters.
-- **Pixel art rules:** compact clusters, crisp native edges, integer scaling only (nearest neighbor), purposeful negative space, and no outlines: form comes from adjacent masses, dark internal structure and selective pale rims.
-- **Depth from layering:** overlapping masses, fog, dither, blur and parallax.
-- **Disciplined light:** author assets fully lit, then darken the environment coherently. Glow and bloom are sparing.
-- **Mineral and strange forms:** ice, mineral, fungal, mycelial, root, shell and modular structures. Seeker technology is dark, minimalist sci-fi fused with the organic: mostly black, with black organic detail and a pale core of light, like the tether node, a metal stake wrapped by a parasitic vine rooting into rock.
-- **Families of beings** share a resemblance and diverge through mutation. Guardians combine dark modular bodies, pale eyes and rims, and suspended orbs.
+These hold in any medium: 3D, illustration, film, print, physical objects and pixel art alike. They describe the brand's look, not one game's.
+
+- **One clear focal point.** Every image or scene has a subject that reads at a glance, set apart by value, color and placement. Give it a color nothing around it shares. In works that include the Seeker character, that is its muted gold: keep it the only yellowish thing in view, so it stays visible wherever it goes.
+- **Color follows place.** The planet's frozen surface and upper caves are cold, pale and muted; deeper down it grows warmer, stranger and more exotic, and so do its colors. A work set elsewhere sets its own temperature. Whatever the palette, keep color purposeful: calm, restrained fields, clear value structure, and a few strong accents that lead the eye.
+- **Silhouette first:** a few decisive features, then detail. Backgrounds stay simpler and quieter than the subject.
+- **No outlines.** Form comes from adjacent masses of color and value, dark internal structure and selective pale rims, not a contour drawn around everything.
+- **Depth from layering:** overlapping masses, atmosphere and haze, and distance that grows paler and quieter, as if lit from far openings.
+- **Disciplined light** reveals form and leads the eye. Glow and bloom stay sparing so shapes survive.
+- **Mineral and strange forms:** ice, mineral, fungal, mycelial, root, shell and modular structures, and organic shapes nobody can name. Strangeness deepens the farther a work goes.
+- **Seeker technology** is dark, minimalist sci-fi fused with the organic: mostly black, with black organic detail and a pale core of light. The tether node is the example, a metal stake wrapped by a parasitic vine that roots into rock.
+- **Families of beings** share a resemblance and diverge through mutation. Guardians combine dark modular bodies, pale eyes and rims, and suspended orbs; SEEKER NET's seekers are tiny computer-like robots.
+
+**When the work is pixel art,** the game's own craft rules apply as well: compact clusters, crisp native edges, integer scaling with nearest-neighbor sampling only, purposeful negative space, dither for gradients and atmosphere, and parallax layers. The game draws its assets fully lit and lets the renderer darken the scene afterwards. Other media express the same ideas through their own techniques.
 
 ### Palette
 
-Exact sRGB values sampled from the game's art. Pick a coherent subset per scene. A new world can shift its hues toward a desert, an ocean or a nebula as long as the relationships hold: muted, dark-structured, cool-dominant, with a small warm focus.
+Exact sRGB values sampled from the game's art, which so far covers the icy surface, the ice caves and the tundra below them. Pick a coherent subset per scene. Deeper regions grow warmer and more exotic: extend the palette that way with the same discipline. A new world can shift its hues entirely, toward a desert, an ocean or a nebula, as long as the relationships hold: restrained fields, clear value structure, and a few accents that lead the eye.
 
 | Family | Colors |
 | --- | --- |
@@ -213,9 +218,9 @@ The PNGs under `assets/levels/chunks/` and `secret_rooms/` are level layouts, no
 
 ### Into any medium or style
 
-Every piece of this art can become something else: a rigged 3D character, a voxel model, a vector illustration, a painting, a plush, a 3D-printed Guardian, an animated short, a garment. Keep what makes it the Seeker's: silhouette and proportions, the palette's relationships (cold, muted, dark structure, one small warm focus), no outlines, readable masses, and the quiet, strange mood. Keep pixelation only when the work wants it.
+Every piece of this art can become something else: a rigged 3D character, a voxel model, a vector illustration, a painting, a plush, a 3D-printed Guardian, an animated short, a garment. Keep what makes it the Seeker's: silhouette and proportions, the palette's relationships (restrained fields, clear values, a few accents that lead the eye), no outlines, readable masses, and the quiet, strange mood. Keep pixelation only when the work wants it.
 
-- **To 3D and rigs:** use the sprite as orthographic reference and its animation sheet for poses and timing. Block out the forms in Blender, keeping the 6/12 proportions (a Seeker two modules tall, its head and visor reading at a glance). Take material colors from the palette, flat or lightly textured. Rig with an armature (Rigify suits humanoids), key the poses from the sheet at 12 frames per second with holds, and export glTF (`.glb`) for three.js, Godot or Bevy, or FBX for other tools. For printing, export STL or 3MF and thicken thin parts. Guardians and seekers also convert naturally to voxels: one 54×54 layer at a time, extruded by depth.
+- **To 3D and rigs:** use the sprite as orthographic reference and its animation sheet for poses and timing. Block out the forms in Blender, keeping the source's proportions (the Seeker, for example, is two modules tall, its head and visor reading at a glance). Take material colors from the palette, flat or lightly textured. Rig with an armature (Rigify suits humanoids), key the poses from the sheet at 12 frames per second with holds, and export glTF (`.glb`) for three.js, Godot or Bevy, or FBX for other tools. For printing, export STL or 3MF and thicken thin parts. Guardians and seekers also convert naturally to voxels: one 54×54 layer at a time, extruded by depth.
 - **To vector and print:** one SVG square per pixel stays crisp at any size; traced shapes give a smoother style. Raster prints use integer scaling only: a 54 px Guardian at 20× is 1080 px, about 9 cm at 300 dpi, so larger prints should use SVG. Check colors in a proof, since print shifts them.
 - **With AI image or 3D generators:** give them the original asset as reference, then check the result against the palette and rules above and fix what drifts.
 
@@ -457,7 +462,7 @@ High quality and alignment with the vision decide what is merged; maintainers re
 
 ## 12. Before you call it done
 
-- **Feel:** does it feel like The Seeker (cold, vast, precise, quietly strange) beyond names and references?
+- **Feel:** does it feel like The Seeker (vast, precise, quietly strange) beyond names and references?
 - **Its own life:** does it have its own world and meaning rather than retelling the main game?
 - **Experience:** is it compelling without a lore lecture, and does its focal subject read at a glance?
 - **Permutation:** do variations change something that matters? Does at least one loop close?
