@@ -44,3 +44,7 @@ Works can read Planetary Guardians (Bitcoin ordinals) and SEEKER NET (Robinhood 
 ## Always current
 
 The codex is a map, not a copy. It sends agents to read the live repositories ([the-seeker](https://github.com/TheSeekerGame/the-seeker), [collections](https://github.com/TheSeekerGame/collections), [seeker-audio](https://github.com/TheSeekerGame/seeker-audio)) before they start, so it keeps up as the projects change.
+
+## License
+
+Licensed under either of [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option, like The Seeker's code. What you make with it follows the licenses of whatever it uses from The Seeker's repositories; the codex lists them.
