@@ -114,6 +114,14 @@ Favor formats that open anywhere (HTML, PNG, SVG, PDF, WAV or FLAC, glTF), few d
 
 The main story's twists and ending are deliberately unpublished. Do not invent them as canon or claim to reveal them; a new work finds its own answers. A work can continue the canon, extend it compatibly, fork it openly, or only borrow the style. All are welcome; say which one it is. None of the lore is required: one borrowed idea, such as the frozen planet, Theorem or the 12-based tuning, is enough to build on.
 
+### The Seeker character
+
+The main game's protagonist is one particular Seeker. Use this description only in works that include them; any other Seeker can look like anything.
+
+- **A mysterious hooded explorer.** A small figure wrapped head to toe in a hooded cloak of muted, sandy gold, in the spirit of the hooded and cloaked wanderers of *Star Wars* and *Dune*. Inside the hood there is only darkness and a single pale slit of light, the visor through which they reach the Codex; the face is never shown. Dark legs show beneath the cloak, which streams behind them when they run.
+- **A backpack that grows.** They usually carry a dark, compact backpack that grows as they gather, in three sizes from small to large (`the-seeker/assets/items/equipment/backpack1.png` to `backpack3.png`). The game swaps sizes as more materials fill it, and the pack trails the body slightly, hovers at rest and shakes while running (`game/src/game/player/equipment.rs`).
+- **In the original game** they are about 12 pixels tall, and their sprites are in `the-seeker/assets/animations/player/`. Their gold is the warm accent described under Visual grammar.
+
 ### What it explores
 
 - **Permutations of existence.** Seeing ultraviolet is one way to exist, thinking as a swarm another, living beneath an ocean of ice a third. Combined, they make an existence no one has had. A permutation counts when it changes behavior, perception, material, rhythm or what becomes possible next; a renamed item or a recolor does not.
@@ -205,7 +213,7 @@ Use, remix and build on all of it. The game's art is CC BY 4.0 and the collectio
 | `the-seeker/assets/levels/tiles/` | Terrain, platforms, decorations, near backgrounds and entities per biome (`ice_biome/`, `tundra_biome/`), and the auto-tiling tilesets and prop sheets in `ldtk_rules/` |
 | `the-seeker/assets/levels/surface/` | The planet's surface: sky, clouds, far range, hills, crater rim |
 | `the-seeker/assets/levels/background_bank/` | Generated middle and far cave backgrounds |
-| `the-seeker/assets/items/` | 12×12 icons: creature drops, equipment, passives, weapons |
+| `the-seeker/assets/items/` | 12×12 icons: creature drops, equipment, passives, weapons. `equipment/backpack1.png` to `backpack3.png` are the Seeker's backpack in its three sizes |
 | `the-seeker/assets/ui/game/` | Skill icons, HUD, toolbar frames, key hints |
 | `the-seeker/assets/fx/`, `assets/font/` | Fog and effect textures; the `PixelFont2.png` bitmap font and the Tektur typeface (SIL OFL) |
 | `the-seeker/tools/` | Source art and exemplars (`source_art/`, `backgrounds/source/`, `surface_art/`) and `generate_*.py` scripts that place art pixel by pixel in code. Edit the script, not its output |
