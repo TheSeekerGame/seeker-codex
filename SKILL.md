@@ -481,3 +481,22 @@ High quality and alignment with the vision decide what is merged; maintainers re
 - **Collections:** if they are in it, do they deepen the work, read only, survive being offline, and leave the work whole for someone who owns nothing?
 - **Openness:** is The Seeker credited, and are licenses and the work's own sources clear?
 - **The person:** can they open, run or use it on their own machine? Do they know where the files are, what was verified and what was not, and what they could do next?
+
+## 13. Field notes
+
+Findings from earlier works, each with the context it came from. They are not rules: they help works that share that context, and the rest of this file always takes precedence.
+
+### SEEKER NET seekers as 3D characters
+
+**Context.** A 3D browser game built with three.js (October 2026), in which seekers follow the player and work as fishing devices. These notes help any work that shows seekers as 3D models; works in 2D or print need none of it.
+
+- **Size.** Seekers read as characters at about half the Seeker's height, and as props when much smaller. With a 1.6 m Seeker, that is about 2 cm per art pixel: a seeker of 35 to 40 px then stands about 0.8 m tall.
+- **The art is an oblique view, so plain extrusion only looks right from the front.** Each monitor shows its front face, a lid (the top face, three or four rows receding up and to the left) and a dark bevel (the left face, five to ten columns). Rebuild it as a box:
+  1. Classify each base pixel once by its master color role and where it sits: lid (`T` and `R`, from the top down), bevel (`D`, `Z`, `L` and `K`, left of the front), front everything else. Do it per base in the master colors, where the roles are unambiguous, then shift the result by each token's base offset.
+  2. Extrude the front face back to a depth of about one and a half times the bevel's width, and wrap the lid art onto the top face and the bevel art onto the left side, sampling them along the receding direction. Give the right side and the back the front's edge colors and the bevel's dark.
+  3. Set the black screen one voxel deep, with the eyes (or the battery) on it.
+  4. Place each add-on at its depth. The art draws every part shifted up and to the left by how far back it sits, so undo that shift for its depth: the hat moves down and right by half the lid's height and half the bevel's width and sits on the box at mid-depth; the back add-on moves by the full lid and bevel and goes behind the back face; the flank pieces move by half and sit at the sides at mid-depth. The floating object becomes a tray in front of and below the monitor, tilted back so its top shows.
+- **Start from the parts, not the finished picture.** The engine's `layers(t)` in `collections/SEEKER_NET/engine/final.py` returns every part already placed and recolored, in paint order; the finished picture has lost what lies behind each part.
+- **Rig them by part.** Keep the floating object, back add-on, body, flank, head and eyes as separate meshes so each can move on its own, stepping on the 12 fps grid: the object bobs, the head sways, the flank pieces lift, the eyes blink and glance toward what the seeker watches, and the whole seeker hops when it moves (or hovers, with a Propeller or Thruster Pods). Light the eyes, and let the screen cast a little light on what is around it.
+- **Voxels with greedy meshing** keep each seeker to a few hundred triangles: only faces between filled and empty cells, with coplanar same-colored neighbors merged.
+- **Dormant pictures** are the seeker darkened by one flat shade per stage, with the battery icon in place of the eyes; in 3D that is a tint on the body and the battery as the lit layer on the screen.
