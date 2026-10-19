@@ -15,7 +15,7 @@ With this skill you help anyone, from a seasoned developer to someone who has ne
 2. **Understand the person and the goal** (section 2), then **choose the simplest path that can deliver it well** (section 3).
 3. **Give the work the Seeker's character** (sections 4 and 5).
 4. **Bring in the collections wherever they deepen the work** (section 6).
-5. **Build the smallest complete version, look at it or listen to it, then grow it,** starting from what earlier works already solved (section 3, *Start from what exists*).
+5. **Build the smallest complete version, look at it or listen to it, then grow it.**
 6. **Finish properly:** credit, licenses, and a way to share it (sections 9 to 12).
 
 ## 1. Read the sources first
@@ -27,7 +27,7 @@ Everything lives at [github.com/TheSeekerGame](https://github.com/TheSeekerGame)
 | [`the-seeker`](https://github.com/TheSeekerGame/the-seeker) | The game, its design vision and lore, every art and audio asset, and the documentation |
 | [`collections`](https://github.com/TheSeekerGame/collections) | Planetary Guardians and SEEKER NET: every art layer, the exact rules that assemble them, and how to read their live state from public APIs |
 | [`seeker-audio`](https://github.com/TheSeekerGame/seeker-audio) | SEEKER, a music studio in the browser where every note is a harmonic of 48 Hz. Live at [theseekergame.github.io/seeker-audio](https://theseekergame.github.io/seeker-audio/) |
-| [`community-games`](https://github.com/TheSeekerGame/community-games) | Games made in the universe, one folder each, all static and readable: working code to learn from and copy. Live at [theseekergame.github.io/community-games](https://theseekergame.github.io/community-games/) |
+| [`community-games`](https://github.com/TheSeekerGame/community-games) | Games made in the universe, one folder each, with readable source. Live at [theseekergame.github.io/community-games](https://theseekergame.github.io/community-games/) |
 | [`theseekergame.github.io`](https://github.com/TheSeekerGame/theseekergame.github.io) | The published [documentation](https://theseekergame.github.io/doc/) and [API reference](https://theseekergame.github.io/api/theseeker_game/), generated from `the-seeker`. Read it, never edit it |
 
 **Always read these before starting, whatever the work:**
@@ -52,7 +52,7 @@ Everything lives at [github.com/TheSeekerGame](https://github.com/TheSeekerGame)
 | Sprites and animation | `docs/authoring/animations.md`, `docs/authoring/animation-reference.md`, `docs/authoring/assets.md` |
 | Caves, terrain, backgrounds | `docs/architecture/level-generation.md` |
 | SEEKER NET at contract level | `collections/SEEKER_NET/contracts/README.md` and `contracts/src/` |
-| Any game, toy or interactive piece | `community-games/README.md`, then the source of every game there that shares something with the work: its genre, its engine, a mechanic, a collection it reads (section 3, *Start from what exists*) |
+| A game, toy or interactive piece | Games in `community-games` that resemble it, for ideas and context (section 3) |
 
 **How to read them:**
 
@@ -101,23 +101,7 @@ Find out, briefly: what they want to make and why, who it is for, where it shoul
 | Tools, bots, dashboards | A web page first; a script only if it must run unattended | Depends |
 | A change to the game or a contribution | Sections 7, 8 and 11 | Git, Rust |
 
-**Start from what exists.** Before building anything from scratch, read the games in `community-games` that touch the work, look at them running, and take what fits: a module, a technique, a solved problem, or the whole game as a starting point to fork. Their code is MIT OR Apache-2.0, so it can be copied and changed freely; keep each file's attribution, credit the game it came from, and credit The Seeker for any CC BY assets that come with it (section 9). Read the code you copy before relying on it, and adapt it to the new work rather than pasting it in whole. What it already holds, in [`soundings/`](https://github.com/TheSeekerGame/community-games/tree/main/soundings) (a 3D ice-fishing game with three.js and no build step):
-
-| Need | Where |
-| --- | --- |
-| A low-resolution pixel look for 3D: a fixed internal resolution, whole-number upscaling, posterized and dithered shading, one-pixel outlines | `src/render/renderer.js`, `src/render/materials.js`, `src/render/outline.js`, `src/render/build.js` |
-| The Seeker as a rigged 3D character with procedural walk, run and idle poses | `src/actors/player.js` |
-| SEEKER NET seekers as voxel characters, built and rigged as in *SEEKER NET seekers as 3D characters* (section 13) | `src/actors/seekerbot.js` |
-| Reading SEEKER NET live (charges, activations, `ChargeReleased` moves), with queueing, fallback RPCs and an offline snapshot | `src/seekernet/chain.js`, `src/seekernet/network.js` |
-| Every seeker's picture at any charge stage, from a baked atlas | `src/seekernet/art.js`, `tools/bake_seekers.py`, `assets/seekernet/` |
-| Traits turned into gameplay (abilities, perks, levels from overcharge) | `src/seekernet/traits.js` |
-| Synthesized sound and music in the 48 Hz tuning, with the whole mix normalized as SEEKER does (leveler, soft clipper, look-ahead limiter) | `src/core/audio.js`, `src/core/master.js`, `src/core/master-worklet.js` |
-| Menus as The Seeker's capsule terminal (tabs, a grid of wells, one detail strip) and full keyboard navigation in its keys | `src/ui/terminal.js`, `src/ui/keynav.js` |
-| Interface pixel art on the world's pixel grid (frames, icons, dithered shades), and The Seeker's pixel font as a web font | `src/ui/pixelart.js`, `tools/make_font.py` |
-| Snapping any color to the game palette | `src/core/palette.js` |
-| Keyboard, mouse, gamepad and touch input in one place | `src/core/input.js` |
-
-Each game's `README.md` and design notes list the rest. Other games join the folder over time, so list it fresh (`https://api.github.com/repos/TheSeekerGame/community-games/contents/`) rather than relying on this table.
+**Look at similar games.** The games in `community-games` are worth reading when they resemble the work: how they look, play and are built gives ideas and context. Soundings, for example, is a 3D ice-fishing game in three.js with a pixel look, the Seeker and SEEKER NET seekers as 3D characters, live chain reads and music in the 48 Hz tuning. Their code is MIT OR Apache-2.0, so anything useful can also be reused, with credit (section 9).
 
 Favor formats that open anywhere (HTML, PNG, SVG, PDF, WAV or FLAC, glTF), few dependencies, and no build step for small web projects. A single HTML file opened straight from disk can call every public API and art host named in this file, because they allow requests from any page; the one exception is the Magic Eden ord mirror, which serves only native programs. A few browser features need a local server: audio worklets, for example, do not run from `file://`. `python3 -m http.server 8000` serves a folder at `http://localhost:8000`. Python comes with Apple's command line tools on a Mac (section 7); on Windows, install it from [python.org](https://www.python.org/downloads/).
 
@@ -481,7 +465,7 @@ Credit The Seeker in every work, never present a work as an official release of 
 
 ## 11. Contribute back
 
-Code, art, music, levels, documentation, bug reports and playtesting are all welcome in `the-seeker`, `seeker-audio` and `collections`, and finished browser games in `community-games` (one folder each, every path relative, as its `README.md` describes), where the next work can build on them. The best ideas from forks can flow back into the originals.
+Code, art, music, levels, documentation, bug reports and playtesting are all welcome in `the-seeker`, `seeker-audio` and `collections`, and finished browser games in `community-games` (one folder each, every path relative, as its `README.md` describes). The best ideas from forks can flow back into the originals.
 
 1. **Talk first about anything large:** open an issue or a draft pull request describing the idea.
 2. **Fork the repository and make a focused branch,** one topic per pull request.
