@@ -35,10 +35,9 @@ Everything lives at [github.com/TheSeekerGame](https://github.com/TheSeekerGame)
 | File | Why |
 | --- | --- |
 | `the-seeker/README.md` | What the game is and how to run it |
-| `the-seeker/docs/design/idea.md` | The creative foundation in depth: themes, philosophy, mathematics, visual language, the open universe, and the collections as shared world signals. If it has moved, find the page titled "The Seeker — a universe of permutations" under `docs/` |
-| `the-seeker/docs/design/lore.md` | The universe, and the questions it deliberately leaves open |
-| `the-seeker/docs/design/open-brand.md` | What is open, under which licenses, how holders act as game masters, and every collection |
-| `the-seeker/docs/design/art-direction.md` | The rules of the art |
+| `the-seeker/docs/design/lore.md` | The universe, its themes (giving without a transaction among them), mathematics as experience, and the questions it deliberately leaves open |
+| `the-seeker/docs/design/open-brand.md` | What is open, under which licenses, how holders act as game masters, every collection, and the ways a work can relate to the canon |
+| `the-seeker/docs/design/art-direction.md` | The rules of the art and the exact palette |
 | `the-seeker/LICENSE.md` | Licenses and the attribution line |
 | `collections/README.md`, `collections/guardians/README.md`, `collections/SEEKER_NET/README.md` | The collectibles, and how any client reads their live state |
 
@@ -60,7 +59,7 @@ Everything lives at [github.com/TheSeekerGame](https://github.com/TheSeekerGame)
 - **With web access only:** fetch the raw URLs. The game's images, audio, fonts and level projects are stored in Git LFS: `raw.githubusercontent.com` returns a text pointer of about 130 bytes for them, and `https://media.githubusercontent.com/media/TheSeekerGame/the-seeker/main/<path>` returns the real file. Nothing in `collections` uses LFS. List a folder with `https://api.github.com/repos/TheSeekerGame/<repository>/contents/<path>`.
 - **Without web access:** work from this file, tell the person so, and ask them to paste whatever else you need.
 
-**The sources evolve.** Read them fresh at the start of every project rather than relying on an earlier read. Where they disagree with this file, follow them and mention the difference to the person. The core (themes, art style, the tuning, the collections' on-chain rules) rarely changes; paths, features and numbers change more often. The endpoints, sizes and code in this file were checked in October 2026. In the game, code and assets define current behavior and design pages record intent. Where `idea.md` and the collections READMEs differ about the collectibles, the READMEs are current.
+**The sources evolve.** Read them fresh at the start of every project rather than relying on an earlier read. Where they disagree with this file, follow them and mention the difference to the person. The core (themes, art style, the tuning, the collections' on-chain rules) rarely changes; paths, features and numbers change more often. The endpoints, sizes and code in this file were checked in October 2026. In the game, code and assets define current behavior and design pages record intent. Where the design pages and the collections READMEs differ about the collectibles, the READMEs are current.
 
 ## 2. Work with the person
 
@@ -107,7 +106,7 @@ Favor formats that open anywhere (HTML, PNG, SVG, PDF, WAV or FLAC, glTF), few d
 
 ## 4. The world and its spirit
 
-`lore.md` and `idea.md` are the full account; this is the essence for when you cannot read them.
+`lore.md`, `open-brand.md` and `art-direction.md` are the full account; this is the essence for when you cannot read them.
 
 ### The universe
 
@@ -384,7 +383,7 @@ async function seekersOf(address) {
 
 ### The other collections
 
-[The Seeker](https://ord.net/collection/the-seeker) (the development diary, on Bitcoin since 2023) and [Planetary Primes](https://ord.net/collection/planetaryprimes) (mathematical artifacts on prime-numbered sats) are also part of the brand, but have no kit yet. They can be read through the same ord recursive endpoints once their inscription IDs are known; `idea.md` suggests roles for them, such as Primes seeding geography.
+[The Seeker](https://ord.net/collection/the-seeker) (the development diary, on Bitcoin since 2023) and [Planetary Primes](https://ord.net/collection/planetaryprimes) (mathematical artifacts on prime-numbered sats) are also part of the brand, but have no kit yet. They can be read through the same ord recursive endpoints once their inscription IDs are known; Possible roles include Primes seeding a region's geography.
 
 ## 7. Play and change The Seeker
 
